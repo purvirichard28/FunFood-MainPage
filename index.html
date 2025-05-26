@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Haven - Share Your Culinary Adventures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🍳 Recipe Haven</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search recipes...">
+                <button class="btn" onclick="searchRecipes()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Recipe Haven</h1>
+            <p>Share your culinary adventures and discover amazing recipes from food lovers around the world</p>
+            <button class="btn btn-primary" onclick="toggleAddRecipeForm()">Share Your Recipe</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Add Recipe Form -->
+        <div id="addRecipeForm" class="add-recipe-form">
+            <h2>Share Your Recipe</h2>
+            <form onsubmit="addRecipe(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="recipeName">Recipe Name</label>
+                        <input type="text" id="recipeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cookTime">Cook Time (minutes)</label>
+                        <input type="number" id="cookTime" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty</label>
+                        <select id="difficulty" required>
+                            <option value="">Select Difficulty</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Snack">Snack</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Tell us about your recipe..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingredients">Ingredients (one per line)</label>
+                    <textarea id="ingredients" placeholder="1 cup flour&#10;2 eggs&#10;1/2 cup milk" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="instructions">Instructions</label>
+                    <textarea id="instructions" placeholder="Step-by-step cooking instructions..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated)</label>
+                    <input type="text" id="tags" placeholder="vegetarian, quick, healthy">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Share Recipe</button>
+                <button type="button" class="btn" onclick="toggleAddRecipeForm()">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Recipe Grid -->
+        <div id="recipeGrid" class="recipe-grid">
+            <!-- Recipes will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Recipe Haven. Made with ❤️ for food lovers everywhere.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
