@@ -120,6 +120,20 @@ function initializeEventListeners() {
             displayRecipes(recipes);
         }
     });
+
+    // Add newsletter form submission handler
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Here you would typically send this to your backend
+            // For now, we'll just show a success message
+            showNotification('Thanks for subscribing! 📧');
+            this.reset();
+        });
+    }
 }
 
 // Display recipes in the grid
