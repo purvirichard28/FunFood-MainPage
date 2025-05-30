@@ -11,10 +11,10 @@
         <nav class="container">
             <a href="#" class="logo">🍳 Recipe Haven</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#recipes">Recipes</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Recipes">Recipes</a></li>
+                <li><a href="#Categories">Categories</a></li>
+                <li><a href="#About">About</a></li>
             </ul>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search recipes...">
@@ -108,5 +108,21 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to Top" style="display:none;position:fixed;bottom:40px;right:40px;z-index:1000;padding:12px 18px;font-size:18px;border:none;border-radius:50%;background:#ff9800;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        ↑
+    </button>
+    <script>
+        // Show/hide button on scroll
+        window.onscroll = function() {
+            document.getElementById("backToTop").style.display =
+                (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+        };
+        // Scroll to top on click
+        document.getElementById("backToTop").onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
 </body>
 </html>
